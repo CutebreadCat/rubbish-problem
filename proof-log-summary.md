@@ -255,6 +255,43 @@ lean problem-361/proof-log/iteration-013.lean
 
 ---
 
+## 第14轮迭代 (iteration-014)
+
+**目标**: 整合所有结果
+
+**提交内容**:
+- `iteration-014.lean` - 整合的Lean证明
+- `iteration-014-attempt.md` - 证明文档
+
+**结果**: ✅ 编译成功
+
+**关键洞见**:
+整合了 k=1 和 k≥2 的情况，建立了统一的框架。
+
+---
+
+## 第15轮迭代 (iteration-015)
+
+**目标**: 建立统一框架
+
+**提交内容**:
+- `iteration-015.lean` - 统一框架的Lean证明
+- `iteration-015-attempt.md` - 证明文档
+
+**结果**: ✅ 编译成功
+
+**关键洞见**:
+建立了统一的公式：F_c(n) = max over k of admissible_interval_size(n, k)
+
+其中 k 满足：
+1. k ≥ 2
+2. k ∤ n
+3. n/(k+1) + 1 ≤ floor(cn)
+
+对于 c ≥ 1，使用 k=1 的情况：F_c(n) = floor(cn) - ceil(n/2)
+
+---
+
 ## 关键困难
 
 1. **组合论证的形式化**: 证明"k+1 个不同元素的和 ≥ 最小 k+1 个元素的和"在 Lean 中很困难
