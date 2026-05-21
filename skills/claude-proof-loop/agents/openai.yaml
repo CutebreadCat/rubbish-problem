@@ -1,0 +1,3 @@
+display_name: Claude Proof Loop
+short_description: Lean proof loops with review and logging
+default_prompt: Use this skill to work on a hard math problem with Claude-style Lean formalization attempts, local Lean checks, adversarial self-review, iteration logs, and optional GitHub commits.

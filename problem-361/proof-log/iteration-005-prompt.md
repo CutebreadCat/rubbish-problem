@@ -1,0 +1,24 @@
+You are working on a hard mathematical problem through Lean formalization. Do not claim a full solution unless Lean checks the exact theorem without placeholders.
+
+Target for this iteration:
+Prove the key step: if s ⊆ A and |s| ≥ k+1, then ∑ i in s, i ≥ (k+1) * ⌈n/(k+1)⌉ + k(k+1)/2.
+
+The argument:
+- The elements of s are distinct integers in [⌈n/(k+1)⌉, ⌊n/k⌋]
+- The minimum sum of k+1 distinct integers in this interval is achieved by taking the k+1 smallest integers
+- These are: ⌈n/(k+1)⌉, ⌈n/(k+1)⌉+1, ..., ⌈n/(k+1)⌉+k
+- Their sum is: (k+1) * ⌈n/(k+1)⌉ + k(k+1)/2
+
+Lean file to create or update:
+C:\Users\Lenovo\Desktop\数学小玩具\rubbish-problem\problem-361\proof-log\iteration-005.lean
+
+Previous review notes:
+The proof has a sorry in sum_distinct_elements_ge. The mathematical argument is correct, but the Lean formalization is incomplete. The key is proving that the sum of k+1 distinct elements from A is at least (k+1) * ⌈n/(k+1)⌉ + k(k+1)/2.
+
+Produce:
+1. A precise Lean theorem or lemma statement.
+2. A Lean proof attempt as the first fenced code block.
+3. Any imports required.
+4. A list of all floor, parity, endpoint, and large-n obligations.
+5. The weakest formalization step.
+6. A suggested narrower Lean target if the proof fails.
