@@ -292,6 +292,37 @@ lean problem-361/proof-log/iteration-013.lean
 
 ---
 
+## 第16轮迭代 (iteration-016)
+
+**目标**: 探索 c < 1 的情况
+
+**提交内容**:
+- `iteration-016.lean` - 探索 c < 1 的 Lean 证明
+- `iteration-016-attempt.md` - 证明文档
+
+**结果**: ✅ 编译成功
+
+**关键洞见**:
+对于 c < 1，需要找到最优的 k ≥ 2 来最大化 admissible 区间大小。
+
+**示例计算**:
+- c = 3/4, n = 100: k=3, interval [26, 33], size = 8
+- c = 1/2, n = 100: k=3, interval [26, 33], size = 8
+- c = 1/3, n = 100: k=3, interval [26, 33], size = 8
+
+**关键发现**:
+对于 c ≥ 1/3，最优的 k 通常是 3（当 3 ∤ n 时），这给出 F_c(n) ≈ n/12
+
+**通用公式**:
+F_c(n) = max over k≥2 of (min(n/k, floor(cn)) - n/(k+1))
+
+其中 k 满足：
+1. k ≥ 2
+2. k ∤ n
+3. n/(k+1) + 1 ≤ floor(cn)
+
+---
+
 ## 关键困难
 
 1. **组合论证的形式化**: 证明"k+1 个不同元素的和 ≥ 最小 k+1 个元素的和"在 Lean 中很困难
