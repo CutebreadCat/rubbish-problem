@@ -29,6 +29,16 @@ F_c(n) = ⌊cn⌋ - ⌈n/2⌉
 - `sum_ge_length_mul`: 元素和 ≥ 长度 * 下界
 - `k1_elements_bound`: (k+1) * (n/(k+1) + 1) > n
 
+### 4. 统一框架 ✅
+建立了统一的公式：F_c(n) = max over k of admissible_interval_size(n, k)
+
+其中 k 满足：
+1. k ≥ 2
+2. k ∤ n
+3. n/(k+1) + 1 ≤ floor(cn)
+
+对于 c ≥ 1，使用 k=1 的情况：F_c(n) = floor(cn) - ceil(n/2)
+
 ## 尚未解决的问题
 
 ### 1. c < 1 的精确公式 ❌
